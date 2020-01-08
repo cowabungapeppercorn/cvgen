@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from cvgen import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.accept, name='accept'),
+    path('<int:id>/', views.view_cv, name='view_cv'),
+    path('download/<int:id>/', views.cv, name='cv'),
+    path('list/', views.list, name='list'),
 ]

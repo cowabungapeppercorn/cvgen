@@ -1,0 +1,43 @@
+{% extends 'cvgen/base.html' %}
+
+{% block content %}
+
+<div class="container m-3">
+  <div class="row">
+    <div class="col-8">
+      <h2>{{ user_profile.name }}</h2>
+      <p>{{ user_profile.email }}<br>{{ user_profile.phone }}</p>
+      <p></p>
+    </div>
+    <div class="col-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" height="100px" alt="img">
+    </div>
+  </div>
+
+  <div class="hr m-0"></div>
+
+  <div class="my-3">
+    <h5>Bio:</h5>
+    <p>{{ user_profile.summary }}</p>
+  </div>
+  
+  <div class="hr"></div>
+
+  <div class="my-3">
+    <h5>Skills:</h5>
+    <p>{{ user_profile.skills }}</p>
+  </div>
+
+  <div class="hr"></div>
+  
+  <div class="my-3">
+    <h5>Education:</h5>
+    <ul>
+      <li>School: {{ user_profile.school }}</li>
+      <li>University: {{ user_profile.university }}</li>
+    </ul>
+  </div>
+
+</div>
+
+{% endblock content %}

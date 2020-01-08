@@ -1,0 +1,29 @@
+{% extends 'cvgen/base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row m-5">
+
+      <div class="col-md-12">
+        <h2>CV Database Profile List</h2>
+      </div>
+
+    </div>
+
+    <hr/>
+    
+    {% for profile in profile_objects %}
+        <div class="row">
+          <div class="col-md-6">
+            {{ profile.name }}
+          </div>
+          <div class="col-md-6">
+            <a href="/{{ profile.id }}" class="btn btn-warning">Download</a>
+          </div>
+        </div>
+        <hr/>
+    {% endfor %}
+  </div>
+
+{% endblock content %}
